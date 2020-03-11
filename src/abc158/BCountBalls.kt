@@ -7,8 +7,13 @@ fun main(args: Array<String>) {
 
     val t = N % (A + B)
     val c = N / (A + B)
+
     if(t == 0L) {
-        println(A * c)
+        if(A + B > N) {
+            println(N - A)
+        }else{
+            println(A * c)
+        }
     }else{
         if(t > A) {
             println(A * c + (t - A))
