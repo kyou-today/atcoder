@@ -5,23 +5,27 @@ import string
 import stringList
 
 fun main(args: Array<String>) {
-    val S = string()
+    var head = mutableListOf<Char>()
+    var tail = string().toMutableList()
     val Q = int()
-
-    val res = buildString {
-        append(S)
-
-        repeat(Q) {
-            val query = stringList()
-            val T = query[0].toInt()
-            if(T == 1) reverse()
-            else {
-                val F = query[1].toInt()
-                if(F == 1) insert(0, query[2])
-                else append(query[2])
+    repeat(Q) {
+        val query = string().split(" ")
+        val T = query[0].toInt()
+        if(T == 1) {
+            val tmp = head
+            head = tail
+            tail = tmp
+        }else{
+            val F = query[1].toInt()
+            val C = query[2].first()
+            if(F == 1) {
+                head.add(C)
+            }else{
+                tail.add(C)
             }
         }
     }
 
+    val res = head.joinToString("").reversed() + tail.joinToString("")
     println(res)
 }
