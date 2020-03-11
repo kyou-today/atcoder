@@ -8,7 +8,7 @@ fun main(args: Array<String>) {
     // v * 0.08 = A
     // v * 0.10 = B
 
-    for(i in 1..100) {
+    for(i in 1..1009) {
         val c = floor(i * 0.08)
         val d = floor(i * 0.10)
         if(A == c && B == d) {
