@@ -12,3 +12,8 @@ tailrec fun gcd(a: Int, b: Int): Int = when {
     b == 0 -> a
     else -> gcd(b, a % b)
 }
+
+fun min(a: Int, b: Int): Int = if(a < b) a else b
+fun min(a: Long, b: Long): Long = if(a < b) a else b
+fun max(a: Int, b: Int): Int = if(a > b) a else b
+fun max(a: Long, b: Long): Long = if(a > b) a else b
