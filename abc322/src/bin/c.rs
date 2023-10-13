@@ -1,9 +1,16 @@
-use proconio::{fastout, input};
+use proconio::{input, fastout};
 
 #[fastout]
 fn main() {
     input! {
-        n: usize,
-        mut plan: [(i32, i32, i32); n],  // Vec<(i32, i32, i32)>
+        n: usize, m: usize,
+        mut a: [usize; m],
+    }
+    a.reverse();
+    for i in 1..=n {
+        if *a.last().unwrap() < i {
+            a.pop();
+        }
+        println!("{}", a.last().unwrap() - i);
     }
 }
